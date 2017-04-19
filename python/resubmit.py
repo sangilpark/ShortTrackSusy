@@ -11,6 +11,7 @@ for err in errlist:
     lines = f.readlines()
     f.close()
     needsresubmitting = False
+    if len(lines)<2: needsresubmitting = True
     for line in lines:
         if 'Begin Fatal Exception' in line: 
             needsresubmitting = True
