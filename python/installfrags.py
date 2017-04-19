@@ -3,11 +3,11 @@ import os, sys
 def main():
     #argument is the slha file to define the signal parameters
     try: slhaname = sys.argv[1]
-    except: slhaname = 'DisTrack/SigPoints/benchmarks/pMSSM12_MCMC1_44_855871.slha'
+    except: slhaname = 'ShortTrackSusy/SigPoints/benchmarks/pMSSM12_MCMC1_44_855871.slha'
 
     if slhaname == 'all': 
         from glob import glob
-        slhas = glob('DisTrack/SigPoints/benchmarks/*.slha')
+        slhas = glob('ShortTrackSusy/SigPoints/benchmarks/*.slha')
     else: slhas = [slhaname]
 
     print 'installing slha files', slhas
