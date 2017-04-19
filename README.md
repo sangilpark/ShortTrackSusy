@@ -34,7 +34,7 @@ cmsenv
 cd ../..
 cmsDriver.py LLP_pMSSM12_MCMC1_27_200970_cff.py --fileout file:pMSSM12_MCMC1_27_200970_step1_GENSIM.root --mc --eventcontent RAWSIM --customise SLHCUpgradeSimulations/Configuration/postLS1Customs.customisePostLS1,Configuration/DataProcessing/Utils.addMonitoring,SimG4Core/CustomPhysics/Exotica_HSCP_SIM_cfi,DisappTrks/SignalMC/genParticlePlusGeant.customizeProduce,DisappTrks/SignalMC/genParticlePlusGeant.customizeKeep --datatier GEN-SIM --conditions MCRUN2_71_V1::All --beamspot Realistic50ns13TeVCollision --step GEN,SIM --magField 38T_PostLS1 --python_filename pMSSM12_MCMC1_27_200970_GENSIM.py --no_exec -n 10 
 python python/edit_config.py pMSSM12_MCMC1_27_200970_GENSIM.py
-cmsDriver pMSSM12_MCMC1_27_200970_GENSIM.py
+cmsDriver.py pMSSM12_MCMC1_27_200970_GENSIM.py
 ```
 
 Setup to generate GENSIMRAW, AODSIM and miniAODSIM
