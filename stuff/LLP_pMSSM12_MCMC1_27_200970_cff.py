@@ -14,10 +14,6 @@ RandomNumberGeneratorService = cms.Service("RandomNumberGeneratorService",
     )
 )
 
-from IOMC.RandomEngine.RandomServiceHelper import RandomNumberServiceHelper
-randSvc = RandomNumberServiceHelper(process.RandomNumberGeneratorService)
-randSvc.populate()
-
 generator = cms.EDFilter("Pythia8GeneratorFilter",
     pythiaPylistVerbosity = cms.untracked.int32(0),
     filterEfficiency = cms.untracked.double(1.0),
