@@ -18,7 +18,7 @@ f.close()
 fnew = open('2'+cname,'w')
 armed = False
 for line in lines:
-    if 'process = ' in line: armed = True
+    if 'process = cms.Process(' in line: armed = True
     fnew.write(line)
     if armed:
         fnew.write(FredBlurb)
