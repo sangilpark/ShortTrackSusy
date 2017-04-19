@@ -15,11 +15,11 @@ cmsDriver.py step1 --filein file:SIGID_step0_GENSIM_n0.root --fileout file:SIGID
 
 cmsDriver.py step2 --filein file:SIGID_step1_GENSIMRAW_n0.root --fileout file:SIGID_step2_AODSIM_n0.root --mc --eventcontent AODSIM --runUnscheduled --datatier AODSIM --conditions 80X_mcRun2_asymptotic_2016_TrancheIV_v6 --step RAW2DIGI,RECO,EI --nThreads 4 --era Run2_2016 --python_filename AOD_cfg.py --customise Configuration/DataProcessing/Utils.addMonitoring,DisappTrks/SignalMC/genParticlePlusGeant.customizeProduce,DisappTrks/SignalMC/genParticlePlusGeant.customizeKeep -n NUMEVENTS
 
-xrdcp SIGID_step2_AODSIM_n0.root root://cmseos.fnal.gov//store/user/sbein/LongLiveTheChi/aodsim/
+xrdcp SIGID_step2_AODSIM_n0.root root://cmseos.fnal.gov//store/user/lpcsusyhad/sbein/LongLiveTheChi/aodsim/smallchunks/
 
 cmsDriver.py step3 --conditions auto:run2_mc --fast --eventcontent MINIAODSIM --runUnscheduled --filein file:SIGID_step2_AODSIM_n0.root --fileout file:SIGID_step3_miniAODSIM_n0.root -s PAT --datatier MINIAODSIM --customise SLHCUpgradeSimulations/Configuration/postLS1Customs.customisePostLS1 --customise Configuration/DataProcessing/Utils.addMonitoring,DisappTrks/SignalMC/genParticlePlusGeant.customizeProduce,DisappTrks/SignalMC/genParticlePlusGeant.customizeKeep --mc -n NUMEVENTS
 
-xrdcp SIGID_step3_miniAODSIM_n0.root root://cmseos.fnal.gov//store/user/sbein/LongLiveTheChi/miniaodsim/
+xrdcp SIGID_step3_miniAODSIM_n0.root root://cmseos.fnal.gov//store/user/lpcsusyhad/sbein/LongLiveTheChi/miniaodsim/smallchunks/
 
 rm *.py 
 rm SIGID*.root
