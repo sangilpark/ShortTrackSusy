@@ -16,13 +16,10 @@ lines = f.readlines()
 f.close()
 
 fnew = open('2'+cname,'w')
-armed = False
 for line in lines:
     if 'process = cms.Process(' in line: armed = True
     fnew.write(line)
-    if armed:
-        fnew.write(FredBlurb)
-        armed = False
-    
+fnew.write(FredBlurb)
+fnew.close()
 
 os.system('mv 2'+cname+' '+cname)
