@@ -4,11 +4,11 @@
 
 Initial setup
 ```
-git clone https://github.com/sbein/DisTrack.git
+git clone https://github.com/ShortTrackSusy/ShortTrackSusy.git
 mkdir jobs
 mkdir jobs/logs
-cp -r DisTrack/python .
-cp DisTrack/template.* .
+cp -r ShortTrackSusy/python .
+cp ShortTrackSusy/template.* .
 ```
 
 Needed for GENSIM:
@@ -18,11 +18,11 @@ cd CMSSW_7_1_25_patch1/src
 cmsenv
 git-cms-addpkg SimG4Core/CustomPhysics
 git-cms-addpkg Configuration/Generator
-cp ../../DisTrack/stuff/* Configuration/Generator/python
-cp ../../DisTrack/stuff/Exotica_HSCP_SIM_cfi.py SimG4Core/CustomPhysics/python/Exotica_HSCP_SIM_cfi.py
-cp -r ../../DisTrack/DisappTrks .
-cp -r ../../DisTrack/Customise .
-cp -r ../../DisTrack/SigPoints .
+cp ../../ShortTrackSusy/stuff/* Configuration/Generator/python
+cp ../../ShortTrackSusy/stuff/Exotica_HSCP_SIM_cfi.py SimG4Core/CustomPhysics/python/Exotica_HSCP_SIM_cfi.py
+cp -r ../../ShortTrackSusy/DisappTrks .
+cp -r ../../ShortTrackSusy/Customise .
+cp -r ../../ShortTrackSusy/SigPoints .
 scram b
 cd ../../
 ```
@@ -40,9 +40,9 @@ Setup to generate GENSIMRAW, AODSIM and miniAODSIM
 cmsrel CMSSW_8_0_21
 cd CMSSW_8_0_21/src
 cmsenv
-cp ../../DisTrack/stuff/* Configuration/Generator/python
-cp ../../DisTrack/stuff/Exotica_HSCP_SIM_cfi.py SimG4Core/CustomPhysics/python/Exotica_HSCP_SIM_cfi.py
-cp -r ../../DisTrack/DisappTrks .
+cp ../../ShortTrackSusy/stuff/* Configuration/Generator/python
+cp ../../ShortTrackSusy/stuff/Exotica_HSCP_SIM_cfi.py SimG4Core/CustomPhysics/python/Exotica_HSCP_SIM_cfi.py
+cp -r ../../ShortTrackSusy/DisappTrks .
 scram b
 cd ../../
 ```
