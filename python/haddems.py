@@ -1,6 +1,6 @@
 import os
 
-os.system('hadd $EOS/store/user/sbein/LongLiveTheChi/LargeFiles/pMSSM12_MCMC1_27_200970_step2_AODSIM.root $EOS/store/user/sbein/LongLiveTheChi/aodsim/pMSSM12_MCMC1_27_200970_step2_AODSIM_*.root &')
+os.system('python ahadd.py  $EOS/store/user/lpcsusyhad/sbein/LongLiveTheChi/aodsim/pMSSM12_MCMC1_27_200970_step2_AODSIM.root $EOS/store/user/lpcsusyhad/sbein/LongLiveTheChi/aodsim/smallchunks/pMSSM12_MCMC1_27_200970_step2_AODSIM_*.root')
 os.system('hadd $EOS/store/user/sbein/LongLiveTheChi/LargeFiles/pMSSM12_MCMC1_10_374794_step2_AODSIM.root $EOS/store/user/sbein/LongLiveTheChi/aodsim/pMSSM12_MCMC1_10_374794_step2_AODSIM_*.root &')
 os.system('hadd $EOS/store/user/sbein/LongLiveTheChi/LargeFiles/pMSSM12_MCMC1_12_865833_step2_AODSIM.root $EOS/store/user/sbein/LongLiveTheChi/aodsim/pMSSM12_MCMC1_12_865833_step2_AODSIM_*.root &')
 os.system('hadd $EOS/store/user/sbein/LongLiveTheChi/LargeFiles/pMSSM12_MCMC1_13_547677_step2_AODSIM.root $EOS/store/user/sbein/LongLiveTheChi/aodsim/pMSSM12_MCMC1_13_547677_step2_AODSIM_*.root &')

@@ -5,6 +5,6 @@ Error = jobs/logs/template.err
 Log = jobs/logs/template.log
 should_transfer_files = YES
 when_to_transfer_output = ON_EXIT
-transfer_input_files=loot.tar
+transfer_input_files=loot.tar, python
 x509userproxy = $ENV(X509_USER_PROXY)
 Queue 1
