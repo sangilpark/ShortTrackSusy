@@ -42,8 +42,6 @@ Setup to generate GENSIMRAW, AODSIM and miniAODSIM
 cmsrel CMSSW_8_0_21
 cd CMSSW_8_0_21/src
 cmsenv
-cp ../../ShortTrackSusy/stuff/* Configuration/Generator/python
-cp ../../ShortTrackSusy/stuff/Exotica_HSCP_SIM_cfi.py SimG4Core/CustomPhysics/python/Exotica_HSCP_SIM_cfi.py
 cp -r ../../ShortTrackSusy/DisappTrks .
 scram b
 cd ../../
