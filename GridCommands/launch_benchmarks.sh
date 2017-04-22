@@ -9,3 +9,7 @@ python python/whip_production.py pMSSM12_MCMC1_44_855871 100 100
 python python/whip_production.py pMSSM12_MCMC1_47_872207 100 100
 python python/whip_production.py pMSSM12_MCMC1_5_448429 100 100
 python python/whip_production.py pMSSM12_MCMC1_8_373637 100 100
+python python/whip_production.py pMSSM12_MCMC1_22_237840 100 100
+python python/whip_production.py pMSSM12_MCMC1_24_345416 100 100
+python python/whip_production.py pMSSM12_MCMC1_37_569964 100 100
+python python/whip_production.py pMSSM12_MCMC1_4_252033 100 100
