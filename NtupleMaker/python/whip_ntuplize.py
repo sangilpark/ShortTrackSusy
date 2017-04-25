@@ -32,6 +32,7 @@ for filename in filelist[:999999]:
     partialname = filename[filename.rfind('/')+1:]
     print 'partialname', partialname
     sigid, jobposition = partialname.split('_step3_miniAODSIM_')
+    jobposition=jobposition.replace('.root','')
     print 'determined sigid, jobpostion =', sigid, jobposition
     job = 'job_'+partialname.replace('.root','')
     print 'creating jobs:',job
@@ -57,6 +58,8 @@ for filename in filelist[:999999]:
             shline=shline.replace('NUMEVENTS',str(numevents))
         if 'NTUPLEDIR' in shline:
             shline=shline.replace('NTUPLEDIR',ntuplizerdir)
+        if 'JOBPOSITION' in shline:
+            shline=shline.replace('JOBPOSITION',jobposition)
         newsh.write(shline)
     newsh.close()
 

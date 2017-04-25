@@ -36,10 +36,13 @@ def main():
         fslha = open('CMSSW_7_1_25_patch1/src/SigPoints/'+slhakey+'.slha','w')
         armed2comment = False
         width = -1.0
+        mass = -9999
         for slhaline in slhalines:
             if 'DECAY   1000024' in slhaline:
                 armed2comment = True
                 width = slhaline.split()[2]
+            if '# ~chi_1+' in slhaline:
+                mass = slhaline.split()[1]
             if armed2comment and '#         PDG' in slhaline: armed2comment = False
             if armed2comment: fslha.write('#'+slhaline)
             else: fslha.write(slhaline)
@@ -52,6 +55,9 @@ def main():
             if ('DECAY  -1000024' in decayline) or ('DECAY  1000024' in decayline):
                 undesirable = decayline.split()[2]
                 fdecay.write(decayline.replace(undesirable,width))
+            elif ('# ~chargino(1)' in decayline):
+                undesirable = decayline.split()[1]
+                fdecay.write(decayline.reaplace(undesirable,mass))
             else: fdecay.write(decayline)
         fdecay.close()
 
