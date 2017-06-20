@@ -30,6 +30,7 @@ SLHAFileForPythia8  = cms.string('SigPoints/pMSSM12_MCMC1_27_200970.slha'),
         pythia8CommonSettingsBlock,
         pythia8CUEP8M1SettingsBlock,
         processParameters = cms.vstring(
+#old pythia 6 parameters            
 #            'IMSS(1)     = 11    ! Spectrum from external SLHA file',
 #            'IMSS(21)    = 33    ! LUN number for SLHA File (must be 33) ',
 #            'IMSS(22)    = 33    ! Read-in SLHA decay table ',
@@ -44,6 +45,8 @@ SLHAFileForPythia8  = cms.string('SigPoints/pMSSM12_MCMC1_27_200970.slha'),
 'ParticleDecays:mSafety = 0.00001',
 'print:quiet=false'
 'SLHA:allowUserOverride = true',
+'1000024:mayDecay = false',
+'-1000024:mayDecay = false',
 #'1000024:isResonance = false',
 #'-1000024:isResonance = false',
 #'1000024:doExternalDecay = true',                                                                                                                     
