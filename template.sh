@@ -7,7 +7,9 @@ cd CMSSW_7_1_25_patch1/src
 eval `scramv1 runtime -sh`
 cd ../../
 cmsDriver.py LLP_SIGID_cff.py --fileout file:SIGID_step0_GENSIM_n0.root --mc --eventcontent RAWSIM --customise SLHCUpgradeSimulations/Configuration/postLS1Customs.customisePostLS1,Configuration/DataProcessing/Utils.addMonitoring,SimG4Core/CustomPhysics/Exotica_HSCP_SIM_cfi,DisappTrks/SignalMC/genParticlePlusGeant.customizeProduce,DisappTrks/SignalMC/genParticlePlusGeant.customizeKeep --datatier GEN-SIM --conditions MCRUN2_71_V1::All --beamspot Realistic50ns13TeVCollision --step GEN,SIM --magField 38T_PostLS1 --python_filename SIGID_GENSIM.py --no_exec -n NUMEVENTS
-python python/edit_config.py SIGID_GENSIM.py
+python ShortTrackSusy/python/edit_config.py SIGID_GENSIM.py
+bash ShortTrackSusy/python/replace_storage.sh SIGID_GENSIM.py SIGID_GENSIMb.py
+mv SIGID_GENSIMb.py SIGID_GENSIM.py
 cmsRun SIGID_GENSIM.py
 
 cd CMSSW_8_0_21/src

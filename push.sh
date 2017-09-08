@@ -1,1 +1,1 @@
-git remote set-url origin https://ShortTrackSusy@github.com/ShortTrackSusy/ShortTrackSusy.git && git push origin master
+git remote set-url origin https://sbein@github.com/ShortTrackSusy/ShortTrackSusy.git && git push origin master
