@@ -18,8 +18,10 @@ cd CMSSW_7_1_25_patch1/src
 cmsenv
 git-cms-addpkg SimG4Core/CustomPhysics
 git-cms-addpkg Configuration/Generator
+git-cms-addpkg SimG4Core/Application
 cp ../../ShortTrackSusy/stuff/* Configuration/Generator/python
 cp ../../ShortTrackSusy/stuff/Exotica_HSCP_SIM_cfi.py SimG4Core/CustomPhysics/python/Exotica_HSCP_SIM_cfi.py
+cp ../../ShortTrackSusy/stuff/g4SimHits_cfi.py SimG4Core/Application/python/
 cp -r ../../ShortTrackSusy/DisappTrks .
 cp -r ../../ShortTrackSusy/Customise .
 cp -r ../../ShortTrackSusy/SigPoints .

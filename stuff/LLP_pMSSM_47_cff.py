@@ -27,28 +27,23 @@ SLHAFileForPythia8  = cms.string('SigPoints/pMSSM12_MCMC1_47_667155.slha'),
 #            'MSUB(229)   = 1     ! to neutralino + chargino',
 #            'MDCY(312,1) = 0     ! set the chargino stable.',
 
-'SUSY:qqbar2chi+chi- = on',
-#'SUSY:all = on',
+#'SUSY:qqbar2chi+chi- = on',
+'SUSY:all = on',
 'ResonanceWidths:minThreshold = 0.0001',
 'ParticleDecays:mSafety = 0.00001',
 'print:quiet=false'
 'SLHA:allowUserOverride = true',
 #'1000024:isResonance = false',
 #'-1000024:isResonance = false',
-#'1000024:doExternalDecay = true',                                                                                                                     
-#'-1000024:doExternalDecay = true'                                                                                                                    
+#'1000024:doExternalDecay = true',                                                                                 #'-1000024:doExternalDecay = true'                                                                                
 #'1000024:onMode = off',
 #'-1000024:onMode = off'
-
-
-#'PartonLevel:ISR = off','PartonLevel:FSR = off',                                                                                                      
-#'PartonLevel:MPI = off','PartonLevel:Remnants = off',                                                                                                 
-#'HadronLevel:all = off',                                                                                                                              
-
-#'SUSY:all = off',                                                                                                                                     
-#'SUSY:gg2gluinogluino = on',                                                                                                                          
-#'SUSY:qqbar2gluinogluino = on',                                                                                                                       
-        ),
+#'PartonLevel:ISR = off','PartonLevel:FSR = off',                                                                  #'PartonLevel:MPI = off','PartonLevel:Remnants = off',
+#'HadronLevel:all = off',
+#'SUSY:all = off',
+#'SUSY:gg2gluinogluino = on',
+#'SUSY:qqbar2gluinogluino = on',
+),
         parameterSets = cms.vstring('pythia8CommonSettings','pythia8CUEP8M1Settings','processParameters'),
 #        SLHAParameters = cms.vstring('SLHAFILE = SigPoints/LMG34.slha'),
     ),
@@ -58,5 +53,4 @@ SLHAFileForPythia8  = cms.string('SigPoints/pMSSM12_MCMC1_47_667155.slha'),
     massPoint = cms.untracked.int32(886),
 #    particleFile = cms.untracked.string('Customise/data/geant4_pMSSM_lmg.slha')
     particleFile = cms.untracked.string('Customise/data/geant4_pMSSM_47.slha') 
-
 )
