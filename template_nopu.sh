@@ -15,17 +15,10 @@ cmsRun SIGID_GENSIM.py
 cd CMSSW_8_0_21/src
 eval `scramv1 runtime -sh`
 cd ../../
-cmsDriver.py step1 --filein file:SIGID_step0_GENSIM_n0.root --fileout file:SIGID_step1_GENSIMRAW_n0.root --pileup=NoPileUp --datatier GEN-SIM-RAW --conditions 80X_mcRun2_asymptotic_2016_TrancheIV_v6 --step DIGI,L1,DIGI2RAW,HLT:@frozen2016  --era Run2_2016 --python_filename SIGID_step1.py --customise Configuration/DataProcessing/Utils.addMonitoring,DisappTrks/SignalMC/genParticlePlusGeant.customizeKeep,DisappTrks/SignalMC/genParticlePlusGeant.customizeProduce -n NUMEVENTS
+cmsDriver.py step2 --filein file:SIGID_step0_GENSIM_n0.root --fileout file:SIGID_step1_AODSIM_n0.root --mc --eventcontent AODSIM --datatier AODSIM --conditions 80X_mcRun2_asymptotic_2016_v3 --step DIGI,L1,DIGI2RAW,HLT:@relval25ns,RAW2DIGI,L1Reco,RECO,EI --era Run2_25ns --python_filename SIGID_step2.py --customise Configuration/DataProcessing/Utils.addMonitoring,DisappTrks/SignalMC/genParticlePlusGeant.customizeProduce,DisappTrks/SignalMC/genParticlePlusGeant.customizeKeep -n NUMEVENTS
 
-cmsDriver.py step2 --filein file:SIGID_step1_GENSIMRAW_n0.root --fileout file:SIGID_step2_AODSIM_n0.root --mc --eventcontent AODSIM --runUnscheduled --datatier AODSIM --conditions 80X_mcRun2_asymptotic_2016_TrancheIV_v6 --step RAW2DIGI,RECO,EI --nThreads 4 --era Run2_2016 --python_filename AOD_cfg.py --customise Configuration/DataProcessing/Utils.addMonitoring,DisappTrks/SignalMC/genParticlePlusGeant.customizeProduce,DisappTrks/SignalMC/genParticlePlusGeant.customizeKeep -n NUMEVENTS
+xrdcp SIGID_step1_AODSIM_n0.root root://cmseos.fnal.gov//store/user/sbein/FastSimDev/Full/aodsim/
 
-xrdcp SIGID_step2_AODSIM_n0.root root://cmseos.fnal.gov//store/user/lpcsusyhad/sbein/LongLiveTheChi/aodsim/smallchunks/
-
-cmsDriver.py step3 --conditions auto:run2_mc --fast --eventcontent MINIAODSIM --runUnscheduled --filein file:SIGID_step2_AODSIM_n0.root --fileout file:SIGID_step3_miniAODSIM_n0.root -s PAT --datatier MINIAODSIM --customise SLHCUpgradeSimulations/Configuration/postLS1Customs.customisePostLS1 --customise Configuration/DataProcessing/Utils.addMonitoring,DisappTrks/SignalMC/genParticlePlusGeant.customizeProduce,DisappTrks/SignalMC/genParticlePlusGeant.customizeKeep --mc -n NUMEVENTS
-
-xrdcp SIGID_step3_miniAODSIM_n0.root root://cmseos.fnal.gov//store/user/lpcsusyhad/sbein/LongLiveTheChi/miniaodsim/smallchunks/
-
-rm *.py 
-rm SIGID*.root
+rm *.root
 
 #try going back to scratch area before running code
