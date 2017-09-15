@@ -15,9 +15,9 @@ cmsRun SIGID_GENSIM.py
 cd CMSSW_8_0_21/src
 eval `scramv1 runtime -sh`
 cd ../../
-cmsDriver.py step2 --filein file:SIGID_step0_GENSIM_10of10.root --fileout file:SIGID_10_374794_step1_AODSIM_n0.root --mc --eventcontent RECOSIM --datatier GEN-SIM-RECO --conditions 80X_mcRun2_asymptotic_2016_v3 --step DIGI,L1,DIGI2RAW,HLT:@relval25ns,RAW2DIGI,L1Reco,RECO,EI --era Run2_25ns --python_filename SIGID_step2.py --customise Configuration/DataProcessing/Utils.addMonitoring,DisappTrks/SignalMC/genParticlePlusGeant.customizeProduce,DisappTrks/SignalMC/genParticlePlusGeant.customizeKeep -n NUMEVENTS
+cmsDriver.py step2 --filein file:SIGID_step0_GENSIM_10of10.root --fileout file:SIGID_step1_GSR_n0.root --mc --eventcontent RECOSIM --datatier GEN-SIM-RECO --conditions 80X_mcRun2_asymptotic_2016_v3 --step DIGI,L1,DIGI2RAW,HLT:@relval25ns,RAW2DIGI,L1Reco,RECO,EI --era Run2_25ns --python_filename SIGID_step2.py --customise Configuration/DataProcessing/Utils.addMonitoring,DisappTrks/SignalMC/genParticlePlusGeant.customizeProduce,DisappTrks/SignalMC/genParticlePlusGeant.customizeKeep -n NUMEVENTS
 
-xrdcp SIGID_step1_AODSIM_n0.root root://cmseos.fnal.gov//store/user/sbein/FastSimDev/Full/gensimreco/
+xrdcp SIGID_step1_GSR_n0.root root://cmseos.fnal.gov//store/user/sbein/FastSimDev/Full/gensimreco/
 
 rm *.root
 
