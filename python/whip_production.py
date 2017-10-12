@@ -5,9 +5,9 @@ print 'DIRSTEM=',dirStem
 
 try: sigid = sys.argv[1].replace('.slha','')
 except: sigid = 'pMSSM12_MCMC1_27_200970'
-try: numevents = int(sys.argv[2])
+try: numevents = int(sys.argv[3])
 except: numevents = 8
-try: numjobs = int(sys.argv[3])
+try: numjobs = int(sys.argv[2])
 except: numjobs = 1
 
 
