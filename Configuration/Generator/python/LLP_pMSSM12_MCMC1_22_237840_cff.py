@@ -75,7 +75,7 @@ SLHAFileForPythia8  = cms.string('SigPoints/pMSSM12_MCMC1_22_237840.slha'),
     processFile = cms.untracked.string('SimG4Core/CustomPhysics/data/RhadronProcessList.txt'),
     useregge = cms.bool(False),
     hscpFlavor = cms.untracked.string('stau'),
-    massPoint = cms.untracked.int32(886),
+    massPoint = cms.untracked.int32(412),
 #    particleFile = cms.untracked.string('Customise/data/geant4_pMSSM_lmg.slha')
     particleFile = cms.untracked.string('Customise/data/geant4_pMSSM12_MCMC1_22_237840.slha') 
 
