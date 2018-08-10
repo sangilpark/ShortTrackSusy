@@ -56,6 +56,6 @@ for nj in range(1,numjobs+1):
 
 	cmd =  'condor_submit jobs/'+job+'.jdl'
 	print cmd
-	os.system(cmd)
+	#os.system(cmd)
     
 print 'done'

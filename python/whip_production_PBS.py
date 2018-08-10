@@ -1,4 +1,5 @@
 import os, sys
+import time
 
 dirStem=os.getcwd()
 print 'DIRSTEM=',dirStem
@@ -14,6 +15,10 @@ if not os.path.exists('CMSSW_7_1_25_patch1/src/Configuration/Generator/python/LL
 	print 'no frag called CMSSW_7_1_25_patch1/src/Configuration/Generator/python/LLP_'+sigid+'_cff.py'
 	print 'please run python/installfrags.py <slha file name> to install fragments'
 	exit(0)
+
+if not os.path.exists('jobs/'+sigid):
+    print 'creating a new jobs directory'
+    os.system('mkdir -p jobs/'+sigid+'/logs jobs/outputs')
 
 if not os.path.exists('loot.tar'):
     print 'creating a new tar file'
@@ -38,7 +43,7 @@ for nj in range(1,numjobs+1):
 	#		jdlline = jdlline.replace('template', job)
 	#	newjdl.write(jdlline)
 	#newjdl.close()
-	newsh = open('jobs/'+job+'.sh','w')
+	newsh = open('jobs/'+sigid+'/'+job+'.sh','w')
 	for shline in SHtemplines:
 		if 'template' in shline:
 			shline=shline.replace('template',job)
@@ -53,9 +58,11 @@ for nj in range(1,numjobs+1):
 		newsh.write(shline)
 	newsh.close()
 
-	#cmd =  'condor_submit jobs/'+job+'.jdl'
-	cmd =  'qsub -q cms jobs/'+job+'.sh'
-	print cmd
-	#os.system(cmd)
+	cmd_chmod =  'chmod u+x jobs/'+sigid+'/'+job+'.sh'
+	os.system(cmd_chmod)
+	cmd_submit =  'qsub -q cms jobs/'+sigid+'/'+job+'.sh'
+	print cmd_submit
+	#os.system(cmd_submit)
+	#time.sleep(0.5)
     
 print 'done'
