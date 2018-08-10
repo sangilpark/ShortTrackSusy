@@ -1,5 +1,6 @@
 import os, sys
 from glob import glob
+import time
 
 TestMode = False
 try: sigid = sys.argv[1]
@@ -38,6 +39,7 @@ for err in errlist:
         print command
         if not TestMode:
             os.system(command)
+	    time.sleep(0.5)
         nresub+=1
 
 #print 'n(resub) first =',nresub
