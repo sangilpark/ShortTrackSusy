@@ -3,12 +3,6 @@
 #PBS -o /u/user/sangilpark/WorkDir/DisappearingTracks/jobs/SIGID/logs/SIGID_n0.out
 
 export JOBDIR=/u/user/sangilpark/WorkDir/DisappearingTracks/jobs/SIGID/SIGID_n0
-export OUTPUTDIR=/u/user/sangilpark/WorkDir/DisappearingTracks/jobs/outputs
-
-if [ ! -d $OUTPUTDIR ]
-then
-    mkdir -p $OUTPUTDIR
-fi
 
 if [ ! -d $JOBDIR ]
 then 
@@ -43,7 +37,7 @@ uberftp cluster142.knu.ac.kr "put SIGID_step2_AODSIM_n0.root /pnfs/knu.ac.kr/dat
 
 cmsDriver.py step3 --conditions auto:run2_mc --fast --eventcontent MINIAODSIM --runUnscheduled --filein file:SIGID_step2_AODSIM_n0.root --fileout file:SIGID_step3_miniAODSIM_n0.root -s PAT --datatier MINIAODSIM --customise SLHCUpgradeSimulations/Configuration/postLS1Customs.customisePostLS1 --customise Configuration/DataProcessing/Utils.addMonitoring,DisappTrks/SignalMC/genParticlePlusGeant.customizeProduce,DisappTrks/SignalMC/genParticlePlusGeant.customizeKeep --mc -n NUMEVENTS
 #xrdcp SIGID_step3_miniAODSIM_n0.root root://cmseos.fnal.gov//store/user/lpcsusyhad/sbein/LongLiveTheChi/miniaodsim/smallchunks/
-uberftp cluster142.knu.ac.kr "put SIGID_step3_miniAODSIM_n0.root /pnfs/knu.ac.kr/data/cms/store/user/spak/DisappTrks/outputs/aodsim/smallchunks/"
+uberftp cluster142.knu.ac.kr "put SIGID_step3_miniAODSIM_n0.root /pnfs/knu.ac.kr/data/cms/store/user/spak/DisappTrks/outputs/miniaodsim/smallchunks/"
 
 rm -f *.py
 rm -f SIGID*.root
